@@ -9,7 +9,7 @@ LABEL maintainer="feragusper@gmail.com"
 
 ADD https://raw.githubusercontent.com/circleci/circleci-images/master/android/bin/circle-android /bin/circle-android
 RUN chmod +rx /bin/circle-android
-RUN mkdir /opt/atlassian/pipelines/agent/build/
+RUN mkdir -p /opt/atlassian/pipelines/agent/build/
 RUN chmod 777 /opt/atlassian/pipelines/agent/build/
 
 # Skip the first line of the Dockerfile template (FROM ${BASE})
