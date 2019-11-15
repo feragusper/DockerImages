@@ -8,9 +8,7 @@ LABEL maintainer="feragusper@gmail.com"
 # Initial Command run as `root`.
 
 ADD https://raw.githubusercontent.com/circleci/circleci-images/master/android/bin/circle-android /bin/circle-android
-RUN chmod +rx /bin/circle-android
-RUN mkdir -p /opt/atlassian/pipelines/agent/build/
-RUN chmod 777 /opt/atlassian/pipelines/agent/build/
+RUN chmod +rx /bin/circle-android=
 
 # Skip the first line of the Dockerfile template (FROM ${BASE})
 
@@ -205,3 +203,5 @@ RUN sdkmanager \
 
 # API_LEVEL string gets replaced by m4
 RUN sdkmanager "platforms;android-29"
+
+RUN groupadd -r feragusper && useradd -r -g feragusper feragusper
