@@ -204,4 +204,5 @@ RUN sdkmanager \
 # API_LEVEL string gets replaced by m4
 RUN sdkmanager "platforms;android-29"
 
-RUN groupadd -r feragusper && useradd -r -g feragusper feragusper
+CMD ["su", "-" ,"groupadd", "-g", "feragusper", "feragusper"]
+CMD ["su", "-" ,"useradd", "-g", "feragusper", "feragusper"]
